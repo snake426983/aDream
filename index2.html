@@ -1,0 +1,124 @@
+﻿<html>
+<head>
+<meta charset="utf-8">
+<title>叽叽歪歪</title>
+    <audio id="bgmMusic" src="http://qzone.haoduoge.com/music3/2015-02-05/1423102935.mp3" preload="auto" type="audio/mp3" autoplay loop></audio>
+<style type="text/css">
+
+.content {
+	width: 80%;
+	color: #90F;
+	height: 100%;
+	top: 0px;
+	left: 10%;
+	font-size: 18px;
+	line-height: 25px;
+	font-family: "微软雅黑";
+	margin-top: 0px;
+}
+body {
+	color: #FFF;
+	padding: 10px;
+	background: url(/bg_105_wrap2.jpg) no-repeat;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	
+}
+.des {
+	font-size: 15px;
+	color: #3C3C3C;
+	width: 100%;
+	text-shadow : 0px 0px 1px #fff;
+	z-index:1000;					
+	right:20px;
+	position:fixed !important;
+	bottom:0px;
+}
+</style>
+<script src="jquery-1.7.1.min.js" language="javascript" type="text/javascript"></script>
+<script src="tao.js" language="javascript" type="text/javascript"></script>
+<script>
+$(document).ready(function(e) {
+
+	$("body").bind("contextmenu", function() {
+      return false;
+    });
+	
+	
+	var guangs=["　","|","　","|"];
+	var guangBiao="/";
+	var guangSub=0;
+	var guang=setInterval("$.guang()",120);
+	var subs=0;
+    var string="叽叽歪歪██惊喜吗██睡不着觉有点想你那██有时候在想这要是一场梦该多好啊！能回到你大学时候██上个月我还去了一趟辽大，门口进不去了，墙也翻不了了██想想那个时候真挺好每天能去图书馆找你，能吃顿楼上的麻辣香锅██记得有一次生气啊大早上的我就在你们宿舍楼下等你，你手机啥的都拉黑了█我都冻得的不行了，你穿个拖鞋拿个暖壶乐呵的出来了看见我就跑了，挺气人的██慢慢的回忆杀啊，我从沈师骑车去的辽大重新走了一边，还去积家溜达溜达█其实真好怀念啊也真的后悔了要是那个时候我能有点出席也不至于现在这样，各自有各自的家庭，其实挺感谢你的陪着我经历那个最穷困潦倒的日子，██没能让你穿好衣服用好的化妆品吃大饭店██你在肇州的时候我去看你的次数太少了，我现在都不敢吃铁锅炖了，怕会想起你，那家的铁锅炖真挺好吃██ 那个时候我要是赖在哈尔滨，那个时候我要是主动加你微信问你还有可能吗，可能就不是这个结局了，现在我感觉我就是癞蛤蟆真配不上差点就毁了你一生，██我还买吉他了那，合计学弹吉他在你结婚的时候唱一首给你们那，可是没来得及啊，██现在没事就给你浇浇水如果要是给你浇33滴那就是做梦梦到你了或者什么事想到你了██可能你感觉我怎么那么无聊那██那还有那几个铜钱吧实际上我没想要就是想因为某个事不想和你断了联系，还能用这个找一个接口██有时候都在想我死了能不能带一样你送的东西走啊，可能来生还能会遇见你把，哪怕你给我当个女儿也行啊，██回忆还是美好的啊，其实那时候你脾气也挺大的，但是现在一点也想不起来了，只有好的地方！██有点想你了，希望还能有机会再看看你。。。<-- 浟佳好资源 -->";
+	$.intent=function(str){
+		str="　　"+str;
+		//var reg=new RegExp("/█{1,2}/","i"); //创建正则RegExp对象
+        str=str.replace(eval("/█/gi"),"█");
+
+		return str;
+	}
+	string=$.intent(string);
+	
+	var echo=setInterval("$.echo()",300);
+		
+	
+	
+	$.guang=function(){
+		  if(guangSub<guangs.length-1){
+			    guangSub++;
+			  }else{
+				  guangSub=0;
+				  }
+			guangBiao=guangs[guangSub];
+			$("#guang").html(guangBiao);
+			
+		}
+	
+	$.echo=function(){
+		if(subs<string.length){
+		$("#txt").html($("#txt").html()+$.repl(string.substr(subs,1)));
+		if($("#guang").offset().top > document.body.scrollHeight / 2){
+		  window.scrollTo(0,$("#guang").offset().top);
+		}
+               $(".des").css("bottom","0px");
+		subs++;
+		}
+	}
+	$.repl=function(str){
+		str=str.replace("\r\n","<br/>");
+		str=str.replace("\n","<br/>");
+		str=str.replace("█","<br/>");
+		return str;
+		}
+});
+
+</script>
+</head>
+
+<center>
+<div align="left" class="content"><span  id="txt"></span><span id="guang"></span>
+<span>
+	
+</span>
+</div>
+<img class="im1" src="0808.jpg" width=800 height=400>
+</center>
+
+
+
+
+<!--下面是浮动的桃心-->
+<div id="bubbles" style="visibility:hidden">
+<img src="img/1.png">
+<img src="img/2.png">
+<img src="img/1.png">
+</div>
+<!---->
+
+
+
+</body>
+</html>
